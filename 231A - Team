@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Team {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int x = scan.nextInt();
+        int sol=0;
+
+        int[][] gameBoard = new int[x][3];
+
+        int[] totCount = new int[x];
+
+        for(int i=0;i<x;i++)
+            for(int j=0;j<3;j++)
+                gameBoard[i][j]=scan.nextInt();
+
+        for(int noi=0;noi<x;noi++){
+            
+            for(int noj=0;noj<3;noj++){
+                totCount[noi]+=gameBoard[noi][noj];
+            }
+        }
+
+        for(int i=0;i<x;i++){
+            if(totCount[i]>1)
+                sol++;
+        }
+
+        System.out.println(sol);
+
+        scan.close();
+    }
+}
