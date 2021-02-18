@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class WayTooLong {
+    
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int tot = scan.nextInt();
+
+        String[] s = new String[tot];
+
+        int i=0;
+
+        while(i<tot){
+            s[i] = scan.next();
+            i+=1;
+        }
+
+        i=0;
+        while(i<tot){
+            
+            if(s[i].length()<=10)
+                System.out.println(s[i]);
+            else
+                System.out.println(s[i].charAt(0)+""+(s[i].length()-2)+""+s[i].charAt(s[i].length()-1));
+
+            i+=1;
+        }
+
+        scan.close();
+    }
+}
